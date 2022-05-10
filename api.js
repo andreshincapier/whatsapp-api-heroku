@@ -13,7 +13,6 @@ global.client = new Client({
   puppeteer: { args: ['--no-sandbox'] }
 });
 
-
 global.authed = false;
 
 const app = express();
