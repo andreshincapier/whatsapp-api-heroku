@@ -8,7 +8,7 @@ const { Client, LocalAuth } = require("whatsapp-web.js");
 
 process.title = "whatsapp-node-api";
 
-//Here puppeteer configuration
+//Here puppeteer configuration.
 global.client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: { args: ['--no-sandbox'] }
