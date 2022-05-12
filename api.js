@@ -63,9 +63,9 @@ client.on("disconnected", () => {
 
 client.initialize();
 
+const authRoute = require("./components/auth");
 const chatRoute = require("./components/chatting");
 const groupRoute = require("./components/group");
-const authRoute = require("./components/auth");
 const contactRoute = require("./components/contact");
 
 app.use(function (req, res, next) {
@@ -73,9 +73,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use("/auth", authRoute);
 app.use("/chat", chatRoute);
 app.use("/group", groupRoute);
-app.use("/auth", authRoute);
 app.use("/contact", contactRoute);
 
 app.listen(port, () => {

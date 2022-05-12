@@ -5,12 +5,11 @@ router.get("/checkauth", async (req, res) => {
   client
     .getState()
     .then((data) => {
-      console.log(data);
-      res.send(data);
-    })
-    .catch((err) => {
-      if (err) {
-        res.send("DISCONNECTED");
+      if (data) {
+        console.log(data);
+        res.send({ status: "SUCCESS", message: data });
+      } else {
+        res.send({ status: "ERROR", message: "DISCONNECTED" });
       }
     });
 });
